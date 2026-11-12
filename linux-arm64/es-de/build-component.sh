@@ -76,6 +76,27 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
+# Let ES-DE resolve the bundled standalone ScummVM launcher. Keep its default
+# RetroArch ScummVM core and standalone option unchanged from the upstream ARM
+# system definition.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PY'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+start = rules.index('<emulator name="SCUMMVM">')
+end = rules.index('</emulator>', start)
+block = rules[start:end]
+static_path = '<rule type="staticpath">'
+launcher = '<entry>/app/retrodeck/components/scummvm/component_launcher.sh</entry>'
+if launcher not in block:
+    if static_path not in block:
+        raise SystemExit('ScummVM staticpath rule was not found in ES-DE rules')
+    block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+    rules_path.write_text(rules[:start] + block + rules[end:])
+PY
+
 # Make the bundled standalone PPSSPP the default PSP emulator. Keep the
 # RetroArch PPSSPP core available as an explicit alternative.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PY'
