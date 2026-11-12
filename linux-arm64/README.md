@@ -5,9 +5,11 @@ archives for the RetroDECK ARM prototype. Keep these artifacts separate from
 x86_64 because the existing component downloader does not select payloads by
 architecture.
 
-Current ARM components are `framework`, `es-de`, `pico-8`, and `retroarch`.
-Their generated archives live in each component's `artifacts/` directory and
-are Git-ignored.
+Current ARM components are `framework`, `es-de`, `pico-8`, `ppsspp`, and
+`retroarch`. Their generated archives live in each component's `artifacts/`
+directory and are Git-ignored. PPSSPP is assembled from the native-architecture
+Flathub app; build its archive on the AArch64 host with
+`ppsspp/build-component.sh`.
 
 The ARM RetroArch recipe bundles the 194 cores in RetroDECK's x86 core inventory
 that have a same-name Linux AArch64 build in Libretro's nightly index. It omits

@@ -76,6 +76,26 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
+# Let ES-DE resolve the bundled standalone PPSSPP launcher.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PY'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+start = rules.index('<emulator name="PPSSPP">')
+end = rules.index('</emulator>', start)
+block = rules[start:end]
+static_path = '<rule type="staticpath">'
+launcher = '<entry>/app/retrodeck/components/ppsspp/component_launcher.sh</entry>'
+if launcher not in block:
+    if static_path not in block:
+        raise SystemExit('PPSSPP staticpath rule was not found in ES-DE rules')
+    block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+    rules = rules[:start] + block + rules[end:]
+    rules_path.write_text(rules)
+PY
+
 # Use the bundled GearColeco core as the ARM ColecoVision default.
 python3 "$script_dir/set-default-core.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
