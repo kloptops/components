@@ -80,6 +80,9 @@ PY
 python3 "$script_dir/set-default-core.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
   colecovision Gearcoleco
+python3 "$script_dir/set-default-core.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  nds DeSmuME
 
 # ES-DE is linked against these three libraries built by the smoke-test
 # manifest. Keep their symlinks with the versioned library files.

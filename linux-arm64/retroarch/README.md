@@ -14,6 +14,7 @@ and point core downloads at Libretro's Linux AArch64 nightly directory.
 the existing x86-oriented preparation steps for unrelated emulators.
 The selected cores are Gambatte, Snes9x, Genesis Plus GX, Mesen for NES,
 GearColeco for ColecoVision, DOSBox Pure for DOS, and mGBA for Game Boy Advance.
+DeSmuME is selected for Nintendo DS, matching the x86 ES-DE default.
 Mesen is also the default NES command in the ARM ES-DE system definition,
 matching the x86 ES-DE configuration.
 An NES game launched successfully through Mesen in the integrated ARM app.
