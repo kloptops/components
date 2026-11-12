@@ -12,12 +12,14 @@ changes: use the OpenGL video driver because the device has no Vulkan driver,
 and point core downloads at Libretro's Linux AArch64 nightly directory.
 `component_prepare.sh` keeps the prototype to the selected cores and avoids
 the existing x86-oriented preparation steps for unrelated emulators.
+The selected cores are Gambatte, Snes9x, Genesis Plus GX, and Mesen for NES.
+Mesen is also the default NES command in the ARM ES-DE system definition,
+matching the x86 ES-DE configuration.
 
 The app executable archive has no assets, core libraries, or component data.
-The component artifact still needs RetroArch assets and the three ARM core
-binaries. `component_recipe.json` assembles the executable, menu assets,
+The component artifact includes RetroArch assets and is built from the ARM
+core binaries. The recipe now selects four cores; rebuild it after recipe
+changes. `component_recipe.json` assembles the executable, menu assets,
 controller profiles, core info, database data, selected cores, and RetroDECK
 component files. Run `build-component.sh` to create the architecture-specific
-artifact under `linux-arm64/retroarch/artifacts/`; this recipe has not been
-run yet. The build helper checks for its host-side tools first; `jq` is not
-installed in the current session, and no packages were installed to add it.
+artifact under `linux-arm64/retroarch/artifacts/`.
