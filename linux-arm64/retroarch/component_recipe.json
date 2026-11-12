@@ -1,0 +1,98 @@
+{
+  "retroarch": [
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/2026-11-11_RetroArch.7z",
+      "source_type": "http",
+      "version": "2026-11-11",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "retroarch", "dest": "bin"},
+        {"type": "create", "dest": "component_version", "contents": "aarch64-2026-11-11"}
+      ]
+    },
+    {
+      "source_url": "https://github.com/libretro/retroarch-assets.git",
+      "source_type": "git",
+      "version": "latest",
+      "dest": "retroarch-assets-source",
+      "extraction_type": "git",
+      "assets": [
+        {"type": "dir", "source": "$EXTRACTED_PATH", "dest": "$COMPONENT_ARTIFACT_ROOT/assets"}
+      ]
+    },
+    {
+      "source_url": "https://github.com/libretro/retroarch-joypad-autoconfig.git",
+      "source_type": "git",
+      "version": "latest",
+      "dest": "retroarch-autoconfig-source",
+      "extraction_type": "git",
+      "assets": [
+        {"type": "dir", "source": "$EXTRACTED_PATH", "dest": "$COMPONENT_ARTIFACT_ROOT/autoconfig"}
+      ]
+    },
+    {
+      "source_url": "https://github.com/libretro/libretro-core-info.git",
+      "source_type": "git",
+      "version": "latest",
+      "dest": "libretro-core-info-source",
+      "extraction_type": "git",
+      "assets": [
+        {"type": "file", "source": "$EXTRACTED_PATH/gambatte_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
+        {"type": "file", "source": "$EXTRACTED_PATH/snes9x_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
+        {"type": "file", "source": "$EXTRACTED_PATH/genesis_plus_gx_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "https://github.com/libretro/libretro-database.git",
+      "source_type": "git",
+      "version": "latest",
+      "dest": "libretro-database-source",
+      "extraction_type": "git",
+      "assets": [
+        {"type": "dir", "source": "$EXTRACTED_PATH/cursors", "dest": "$COMPONENT_ARTIFACT_ROOT/database/cursors"},
+        {"type": "dir", "source": "$EXTRACTED_PATH/rdb", "dest": "$COMPONENT_ARTIFACT_ROOT/database/rdb"}
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gambatte_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "gambatte_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/snes9x_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "snes9x_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/genesis_plus_gx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "genesis_plus_gx_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "$REPO_ROOT/retroarch/component_recipe.json",
+      "source_type": "local",
+      "extraction_type": "local",
+      "assets": [
+        {"type": "dir", "source": "$REPO_ROOT/linux-arm64/retroarch/rd_assets/rd_config", "dest": "rd_config"},
+        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_functions.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
+        {"type": "file", "source": "$REPO_ROOT/retroarch/component_launcher.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
+        {"type": "file", "source": "$REPO_ROOT/retroarch/component_manifest.json", "dest": "$COMPONENT_ARTIFACT_ROOT"},
+        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_recipe.json", "dest": "$COMPONENT_ARTIFACT_ROOT"},
+        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_prepare.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
+        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_update.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"}
+      ]
+    }
+  ]
+}

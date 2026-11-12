@@ -109,7 +109,7 @@ transmute() {
 
   # Artifact compression stage
   if [[ ! "$DRYRUN" == "true" ]]; then
-    local final_artifact_dir="$REPO_ROOT/$COMPONENT_NAME/artifacts"
+    local final_artifact_dir="${COMPONENT_ARTIFACTS_DIR:-$REPO_ROOT/$COMPONENT_NAME/artifacts}"
 
     if [[ ! -d "$final_artifact_dir" ]]; then
       mkdir -p "$final_artifact_dir"
