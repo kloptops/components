@@ -15,7 +15,10 @@ if [[ ${#missing_commands[@]} -gt 0 ]]; then
 fi
 
 repo_root="$(git -C "$(dirname "${BASH_SOURCE[0]}")/../.." rev-parse --show-toplevel)"
+retrodeck_root="$(dirname "$repo_root")/RetroDECK"
+build_workdir="$retrodeck_root/.tmp-arm-retroarch-build"
 export COMPONENT_ARTIFACTS_DIR="$repo_root/linux-arm64/retroarch/artifacts"
 
 exec bash "$repo_root/automation-tools/alchemist/alchemist.sh" \
-  --file "$repo_root/linux-arm64/retroarch/component_recipe.json"
+  --file "$repo_root/linux-arm64/retroarch/component_recipe.json" \
+  --output "$build_workdir"
