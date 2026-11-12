@@ -24,4 +24,5 @@ fi
 export COMPONENT_ARTIFACTS_DIR="$script_dir/artifacts"
 exec bash "$components_root/automation-tools/alchemist/alchemist.sh" \
   --file "$components_root/ppsspp/component_recipe.json" \
+  --versions "$script_dir/desired_versions.sh" \
   --output "$workdir"

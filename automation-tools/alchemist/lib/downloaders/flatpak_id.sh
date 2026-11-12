@@ -26,14 +26,9 @@ download() {
     log info "Resolved latest version: $resolved_flatpak_version"
   fi
   
-  if [[ "$flatpak_install_mode" == "user" ]]; then
-    final_dest="$FLATPAK_USER_ROOT/app/$flatpak_id/current/$resolved_flatpak_version/files"
-  elif [[ "$flatpak_install_mode" == "system" ]]; then
-    final_dest="$FLATPAK_SYSTEM_ROOT/app/$flatpak_id/current/$resolved_flatpak_version/files"
-  else
+  if [[ "$flatpak_install_mode" != "user" && "$flatpak_install_mode" != "system" ]]; then
     log warn "Provided Flatpak destination invalid. Valid options are \"user\" or \"system\". Defaulting to \"$FLATPAK_DEFAULT_INSTALL_MODE\" install type."
     flatpak_install_mode="$FLATPAK_DEFAULT_INSTALL_MODE"
-    final_dest="$FLATPAK_USER_ROOT/app/$flatpak_id/current/$resolved_flatpak_version/files"
   fi
 
   log info "Downloading: $flatpak_id"
@@ -49,9 +44,17 @@ download() {
     return 1
   fi
 
-  # Verify local Flatpak install exists
+  # Flatpak deploy paths include architecture, branch, and the resolved commit.
+  # Ask Flatpak for that ref's location instead of assuming a directory layout.
+  local install_location
+  install_location="$(flatpak info --"$flatpak_install_mode" --show-location "$flatpak_id" 2>/dev/null)" || {
+    log error "Could not locate the installed Flatpak ref for $flatpak_id"
+    return 1
+  }
+  final_dest="$install_location/files"
+
   if [[ ! -d "$final_dest" ]]; then
-    log error "Flatpak not installed at desired destination: $final_dest"
+    log error "Flatpak files directory does not exist: $final_dest"
     return 1
   fi
 
