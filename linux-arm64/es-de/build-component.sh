@@ -76,6 +76,11 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
+# Use the bundled GearColeco core as the ARM ColecoVision default.
+python3 "$script_dir/set-default-core.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  colecovision Gearcoleco
+
 # ES-DE is linked against these three libraries built by the smoke-test
 # manifest. Keep their symlinks with the versioned library files.
 for library in "$app_files"/lib/libfreeimage* "$app_files"/lib/libgit2* "$app_files"/lib/libpugixml*; do
