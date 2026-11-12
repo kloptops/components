@@ -45,7 +45,8 @@
         {"type": "file", "source": "$EXTRACTED_PATH/dosbox_pure_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
         {"type": "file", "source": "$EXTRACTED_PATH/mgba_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
         {"type": "file", "source": "$EXTRACTED_PATH/desmume_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/mupen64plus_next_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {"type": "file", "source": "$EXTRACTED_PATH/mupen64plus_next_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
+        {"type": "file", "source": "$EXTRACTED_PATH/swanstation_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
       ]
     },
     {
@@ -138,6 +139,15 @@
       "extraction_type": "archive",
       "assets": [
         {"type": "file", "source": "mupen64plus_next_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/swanstation_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "swanstation_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
       ]
     },
     {
