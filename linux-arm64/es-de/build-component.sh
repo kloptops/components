@@ -85,6 +85,10 @@ python3 "$script_dir/set-default-core.py" \
   nds DeSmuME
 python3 "$script_dir/set-default-core.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  n64 Mupen64Plus-Next \
+  "%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/mupen64plus_next_libretro.so %ROM%"
+python3 "$script_dir/set-default-core.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
   psx SwanStation
 
 # ES-DE is linked against these three libraries built by the smoke-test
