@@ -6,8 +6,16 @@
       "version": "2026-11-11",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "retroarch", "dest": "bin"},
-        {"type": "create", "dest": "component_version", "contents": "aarch64-2026-11-11"}
+        {
+          "type": "file",
+          "source": "retroarch",
+          "dest": "bin"
+        },
+        {
+          "type": "create",
+          "dest": "component_version",
+          "contents": "aarch64-2026-11-11"
+        }
       ]
     },
     {
@@ -17,7 +25,11 @@
       "dest": "retroarch-assets-source",
       "extraction_type": "git",
       "assets": [
-        {"type": "dir", "source": "$EXTRACTED_PATH", "dest": "$COMPONENT_ARTIFACT_ROOT/assets"}
+        {
+          "type": "dir",
+          "source": "$EXTRACTED_PATH",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/assets"
+        }
       ]
     },
     {
@@ -27,7 +39,11 @@
       "dest": "retroarch-autoconfig-source",
       "extraction_type": "git",
       "assets": [
-        {"type": "dir", "source": "$EXTRACTED_PATH", "dest": "$COMPONENT_ARTIFACT_ROOT/autoconfig"}
+        {
+          "type": "dir",
+          "source": "$EXTRACTED_PATH",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/autoconfig"
+        }
       ]
     },
     {
@@ -37,16 +53,976 @@
       "dest": "libretro-core-info-source",
       "extraction_type": "git",
       "assets": [
-        {"type": "file", "source": "$EXTRACTED_PATH/gambatte_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/snes9x_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/genesis_plus_gx_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/gearcoleco_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/mesen_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/dosbox_pure_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/mgba_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/desmume_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/mupen64plus_next_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/swanstation_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gambatte_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/snes9x_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/genesis_plus_gx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gearcoleco_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mesen_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dosbox_pure_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mgba_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/desmume_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mupen64plus_next_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/swanstation_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/2048_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/3dengine_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/81_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/DoubleCherryGB_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/a5200_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/amiarcadia_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/anarch_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/applewin_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/arduous_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/atari800_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/b2_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bk_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/blastem_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bluemsx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/boom3_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes-jg_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes2014_accuracy_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes2014_balanced_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes2014_performance_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes_cplusplus98_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes_mercury_accuracy_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes_mercury_balanced_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/bsnes_mercury_performance_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/cannonball_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/cap32_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/cdi2015_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/chailove_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/citra_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/citra2018_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/clownmdemu_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/craft_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/crocods_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/desmume2015_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dice_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dinothawr_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dirksimple_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dolphin_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dosbox_core_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/dosbox_svn_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/easyrpg_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/ecwolf_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/ep128emu_core_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbalpha2012_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbalpha2012_cps1_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbalpha2012_cps2_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbalpha2012_cps3_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbalpha2012_neogeo_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fbneo_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fceumm_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fixgb_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fixnes_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/flycast_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fmsx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/freechaf_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/freeintv_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/frodo_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/fuse_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/galaksija_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gam4980_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gearboy_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/geargrafx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gearsystem_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/genesis_plus_gx_wide_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/geolith_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gme_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gong_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gpsp_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/gw_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/handy_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/hatari_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/holani_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/jaxe_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/jollycv_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/jumpnbump_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/kronos_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/lowresnx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/lutro_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/m2000_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame2000_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame2003_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame2003_midway_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame2003_plus_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mame2010_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_gba_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_lynx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_ngp_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_pce_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_pce_fast_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_pcfx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_psx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_psx_hw_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_saturn_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_snes_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_supafaust_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_supergrafx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_vb_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mednafen_wswan_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/melonds_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/melondsds_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mesen-s_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/meteor_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/minivmac_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mojozork_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mrboom_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/mu_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/nekop2_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/neocd_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/nestopia_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/np2kai_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/numero_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/nxengine_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/o2em_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/oberon_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/openlara_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/opera_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/parallel_n64_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/pcsx2_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/pcsx_rearmed_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/pd777_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/picodrive_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/play_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/pocketcdg_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/pokemini_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/potator_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/ppsspp_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/prboom_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/prosystem_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/puae_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/puae2021_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/px68k_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/quasi88_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/quicknes_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/race_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/reminiscence_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/retro8_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/same_cdi_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/sameduck_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/scummvm_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/skyemu_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/smsplus_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/snes9x2002_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/snes9x2005_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/snes9x2005_plus_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/snes9x2010_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/squirreljme_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/stella_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/stella2014_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/stella2023_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/superbroswar_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/tamalibretro_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/tgbdual_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/theodore_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/thepowdertoy_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/tic80_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/tyrquake_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/uw8_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/uzem_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vaporspec_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vba_next_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vbam_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vecx_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vemulator_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_x128_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_x64_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_x64sc_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_xpet_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_xplus4_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_xscpu64_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vice_xvic_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vircon32_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/virtualjaguar_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/virtualxt_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vitaquake2_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vitaquake2-rogue_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vitaquake2-xatrix_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vitaquake2-zaero_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/vitaquake3_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/wasm4_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/x1_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/xrick_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/yabasanshiro_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        },
+        {
+          "type": "file",
+          "source": "$EXTRACTED_PATH/yabause_libretro.info",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -56,8 +1032,16 @@
       "dest": "libretro-database-source",
       "extraction_type": "git",
       "assets": [
-        {"type": "dir", "source": "$EXTRACTED_PATH/cursors", "dest": "$COMPONENT_ARTIFACT_ROOT/database/cursors"},
-        {"type": "dir", "source": "$EXTRACTED_PATH/rdb", "dest": "$COMPONENT_ARTIFACT_ROOT/database/rdb"}
+        {
+          "type": "dir",
+          "source": "$EXTRACTED_PATH/cursors",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/database/cursors"
+        },
+        {
+          "type": "dir",
+          "source": "$EXTRACTED_PATH/rdb",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/database/rdb"
+        }
       ]
     },
     {
@@ -66,7 +1050,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "gambatte_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "gambatte_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -75,7 +1063,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "snes9x_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "snes9x_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -84,7 +1076,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "genesis_plus_gx_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "genesis_plus_gx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -93,7 +1089,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "mesen_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "mesen_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -102,7 +1102,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "gearcoleco_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "gearcoleco_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -111,7 +1115,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "dosbox_pure_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "dosbox_pure_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -120,7 +1128,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "mgba_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "mgba_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -129,7 +1141,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "desmume_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "desmume_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -138,7 +1154,11 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "mupen64plus_next_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "mupen64plus_next_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -147,7 +1167,2403 @@
       "version": "nightly",
       "extraction_type": "archive",
       "assets": [
-        {"type": "file", "source": "swanstation_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {
+          "type": "file",
+          "source": "swanstation_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/2048_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "2048_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/3dengine_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "3dengine_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/81_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "81_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/DoubleCherryGB_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "DoubleCherryGB_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/a5200_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "a5200_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/amiarcadia_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "amiarcadia_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/anarch_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "anarch_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/applewin_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "applewin_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/arduous_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "arduous_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/atari800_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "atari800_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/b2_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "b2_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bk_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bk_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/blastem_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "blastem_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bluemsx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bluemsx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/boom3_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "boom3_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes-jg_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes-jg_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes2014_accuracy_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes2014_accuracy_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes2014_balanced_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes2014_balanced_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes2014_performance_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes2014_performance_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes_cplusplus98_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes_cplusplus98_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes_mercury_accuracy_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes_mercury_accuracy_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes_mercury_balanced_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes_mercury_balanced_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/bsnes_mercury_performance_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "bsnes_mercury_performance_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/cannonball_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "cannonball_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/cap32_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "cap32_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/cdi2015_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "cdi2015_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/chailove_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "chailove_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/citra_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "citra_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/citra2018_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "citra2018_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/clownmdemu_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "clownmdemu_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/craft_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "craft_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/crocods_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "crocods_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/desmume2015_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "desmume2015_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dice_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dice_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dinothawr_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dinothawr_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dirksimple_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dirksimple_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dolphin_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dolphin_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dosbox_core_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dosbox_core_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/dosbox_svn_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "dosbox_svn_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/easyrpg_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "easyrpg_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/ecwolf_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "ecwolf_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/ep128emu_core_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "ep128emu_core_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbalpha2012_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbalpha2012_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbalpha2012_cps1_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbalpha2012_cps1_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbalpha2012_cps2_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbalpha2012_cps2_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbalpha2012_cps3_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbalpha2012_cps3_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbalpha2012_neogeo_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbalpha2012_neogeo_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fbneo_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fbneo_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fceumm_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fceumm_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fixgb_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fixgb_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fixnes_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fixnes_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/flycast_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "flycast_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fmsx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fmsx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/freechaf_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "freechaf_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/freeintv_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "freeintv_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/frodo_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "frodo_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/fuse_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "fuse_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/galaksija_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "galaksija_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gam4980_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gam4980_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gearboy_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gearboy_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/geargrafx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "geargrafx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gearsystem_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gearsystem_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/genesis_plus_gx_wide_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "genesis_plus_gx_wide_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/geolith_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "geolith_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gme_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gme_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gong_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gong_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gpsp_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gpsp_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/gw_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "gw_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/handy_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "handy_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/hatari_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "hatari_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/holani_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "holani_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/jaxe_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "jaxe_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/jollycv_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "jollycv_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/jumpnbump_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "jumpnbump_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/kronos_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "kronos_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/lowresnx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "lowresnx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/lutro_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "lutro_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/m2000_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "m2000_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame2000_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame2000_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame2003_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame2003_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame2003_midway_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame2003_midway_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame2003_plus_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame2003_plus_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mame2010_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mame2010_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_gba_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_gba_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_lynx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_lynx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_ngp_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_ngp_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_pce_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_pce_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_pce_fast_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_pce_fast_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_pcfx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_pcfx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_psx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_psx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_psx_hw_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_psx_hw_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_saturn_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_saturn_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_snes_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_snes_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_supafaust_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_supafaust_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_supergrafx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_supergrafx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_vb_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_vb_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mednafen_wswan_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mednafen_wswan_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/melonds_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "melonds_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/melondsds_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "melondsds_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mesen-s_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mesen-s_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/meteor_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "meteor_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/minivmac_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "minivmac_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mojozork_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mojozork_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mrboom_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mrboom_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mu_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "mu_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/nekop2_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "nekop2_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/neocd_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "neocd_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/nestopia_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "nestopia_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/np2kai_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "np2kai_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/numero_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "numero_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/nxengine_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "nxengine_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/o2em_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "o2em_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/oberon_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "oberon_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/openlara_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "openlara_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/opera_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "opera_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/parallel_n64_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "parallel_n64_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/pcsx2_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "pcsx2_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/pcsx_rearmed_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "pcsx_rearmed_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/pd777_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "pd777_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/picodrive_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "picodrive_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/play_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "play_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/pocketcdg_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "pocketcdg_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/pokemini_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "pokemini_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/potator_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "potator_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/ppsspp_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "ppsspp_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/prboom_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "prboom_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/prosystem_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "prosystem_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/puae_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "puae_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/puae2021_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "puae2021_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/px68k_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "px68k_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/quasi88_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "quasi88_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/quicknes_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "quicknes_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/race_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "race_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/reminiscence_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "reminiscence_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/retro8_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "retro8_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/same_cdi_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "same_cdi_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/sameduck_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "sameduck_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/scummvm_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "scummvm_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/skyemu_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "skyemu_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/smsplus_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "smsplus_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/snes9x2002_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "snes9x2002_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/snes9x2005_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "snes9x2005_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/snes9x2005_plus_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "snes9x2005_plus_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/snes9x2010_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "snes9x2010_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/squirreljme_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "squirreljme_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/stella_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "stella_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/stella2014_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "stella2014_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/stella2023_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "stella2023_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/superbroswar_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "superbroswar_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/tamalibretro_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "tamalibretro_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/tgbdual_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "tgbdual_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/theodore_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "theodore_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/thepowdertoy_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "thepowdertoy_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/tic80_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "tic80_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/tyrquake_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "tyrquake_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/uw8_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "uw8_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/uzem_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "uzem_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vaporspec_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vaporspec_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vba_next_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vba_next_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vbam_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vbam_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vecx_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vecx_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vemulator_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vemulator_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_x128_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_x128_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_x64_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_x64_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_x64sc_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_x64sc_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_xpet_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_xpet_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_xplus4_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_xplus4_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_xscpu64_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_xscpu64_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vice_xvic_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vice_xvic_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vircon32_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vircon32_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/virtualjaguar_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "virtualjaguar_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/virtualxt_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "virtualxt_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vitaquake2_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vitaquake2_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vitaquake2-rogue_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vitaquake2-rogue_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vitaquake2-xatrix_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vitaquake2-xatrix_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vitaquake2-zaero_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vitaquake2-zaero_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/vitaquake3_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "vitaquake3_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/wasm4_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "wasm4_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/x1_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "x1_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/xrick_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "xrick_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/yabasanshiro_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "yabasanshiro_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/yabause_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {
+          "type": "file",
+          "source": "yabause_libretro.so",
+          "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"
+        }
       ]
     },
     {
@@ -155,13 +3571,41 @@
       "source_type": "local",
       "extraction_type": "local",
       "assets": [
-        {"type": "dir", "source": "$REPO_ROOT/linux-arm64/retroarch/rd_assets/rd_config", "dest": "rd_config"},
-        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_functions.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
-        {"type": "file", "source": "$REPO_ROOT/retroarch/component_launcher.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
-        {"type": "file", "source": "$REPO_ROOT/retroarch/component_manifest.json", "dest": "$COMPONENT_ARTIFACT_ROOT"},
-        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_recipe.json", "dest": "$COMPONENT_ARTIFACT_ROOT"},
-        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_prepare.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"},
-        {"type": "file", "source": "$REPO_ROOT/linux-arm64/retroarch/component_update.sh", "dest": "$COMPONENT_ARTIFACT_ROOT"}
+        {
+          "type": "dir",
+          "source": "$REPO_ROOT/linux-arm64/retroarch/rd_assets/rd_config",
+          "dest": "rd_config"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/linux-arm64/retroarch/component_functions.sh",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/retroarch/component_launcher.sh",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/retroarch/component_manifest.json",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/linux-arm64/retroarch/component_recipe.json",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/linux-arm64/retroarch/component_prepare.sh",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        },
+        {
+          "type": "file",
+          "source": "$REPO_ROOT/linux-arm64/retroarch/component_update.sh",
+          "dest": "$COMPONENT_ARTIFACT_ROOT"
+        }
       ]
     }
   ]

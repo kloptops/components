@@ -1,4 +1,9 @@
-# ARM64 RetroArch core overlay
+# ARM64 RetroArch starter-core overlay
+
+This helper was used for the initial ARM RetroArch prototype. The complete
+ARM component now stages all matching AArch64 cores through
+`../retroarch/component_recipe.json`; this three-core overlay is not part of
+that build path.
 
 `build-core-overlay.sh` stages the prototype's Gambatte, Snes9x, and Genesis
 Plus GX shared libraries from [Libretro's Linux AArch64 nightly core

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Prototype preparation for the three-core ARM64 RetroArch component.
+# Preparation for the ARM64 RetroArch component and its supported core set.
 
 component_name="$(basename "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")")"
 component_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
