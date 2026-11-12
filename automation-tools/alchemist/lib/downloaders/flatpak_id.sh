@@ -14,6 +14,7 @@ download() {
   local initial_delay="${6:-2}"
   local max_delay="${7:-30}"
 
+  local final_dest=""
   local resolved_flatpak_version="$flatpak_version"
 
   if [[ "$flatpak_version" == "latest" ]]; then # Resolve "latest" version if needed
@@ -32,7 +33,7 @@ download() {
   fi
 
   log info "Downloading: $flatpak_id"
-  log info "Destination: $final_dest"
+  log info "Requested commit: $resolved_flatpak_version"
   log info "Flatpak Install Mode: $flatpak_install_mode"
 
   download_cmd() {
@@ -52,6 +53,7 @@ download() {
     return 1
   }
   final_dest="$install_location/files"
+  log info "Installed files: $final_dest"
 
   if [[ ! -d "$final_dest" ]]; then
     log error "Flatpak files directory does not exist: $final_dest"
