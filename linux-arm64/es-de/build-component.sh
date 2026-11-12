@@ -56,6 +56,26 @@ install -Dm755 "$app_files/bin/es-de" "$component_dir/bin/es-de"
 mkdir -p "$component_dir/share" "$component_dir/lib"
 cp -a "$app_files/share/es-de" "$component_dir/share/"
 
+# Let ES-DE resolve the launcher that executes the user's own PICO-8 copy.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PY'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+start = rules.index('<emulator name="PICO-8">')
+end = rules.index('</emulator>', start)
+block = rules[start:end]
+static_path = '<rule type="staticpath">'
+launcher = '<entry>/app/retrodeck/components/pico-8/component_launcher.sh</entry>'
+if launcher not in block:
+    if static_path not in block:
+        raise SystemExit('PICO-8 staticpath rule was not found in ES-DE rules')
+    block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+    rules = rules[:start] + block + rules[end:]
+    rules_path.write_text(rules)
+PY
+
 # ES-DE is linked against these three libraries built by the smoke-test
 # manifest. Keep their symlinks with the versioned library files.
 for library in "$app_files"/lib/libfreeimage* "$app_files"/lib/libgit2* "$app_files"/lib/libpugixml*; do

@@ -9,12 +9,25 @@ if [[ ("$action" == "reset") || ("$action" == "postmove") ]]; then
   log i "Resetting/post-moving $component_name"
   log i "----------------------"
 
-  if [[ -d "$roms_path/pico8" ]]; then
-    dir_prep "$roms_path/pico8" "$bios_path/pico-8/carts" # Symlink default game location to RD roms for cleanliness (this location is overridden anyway by the --root_path launch argument anyway)
-  fi
-  dir_prep "$bios_path/pico-8" "$HOME/.lexaloffle/pico-8" # Store binary and config files together. The .lexaloffle directory is a hard-coded location for the PICO-8 config file, cannot be changed
-  dir_prep "$saves_path/pico-8" "$bios_path/pico-8/cdata"  # PICO-8 saves folder
+  create_dir "$bios_path/pico-8"
+  create_dir "$roms_path/pico8"
+  create_dir "$saves_path/pico-8"
+
+  # Keep the user's licensed PICO-8 copy intact; only manage its carts and saves.
+  dir_prep "$roms_path/pico8" "$bios_path/pico-8/carts"
+  dir_prep "$saves_path/pico-8" "$bios_path/pico-8/cdata"
+
   create_dir "$XDG_CONFIG_HOME/pico-8/"
-  cp -fv "$component_config/config.txt" "$pico8_config"
-  cp -fv "$component_config/sdl_controllers.txt" "$pico8_config_sdl_controllers"
+  if [[ ! -f "$pico8_config" ]]; then
+    cp -f "$component_config/config.txt" "$pico8_config"
+  fi
+  if [[ ! -f "$pico8_config_sdl_controllers" ]]; then
+    cp -f "$component_config/sdl_controllers.txt" "$pico8_config_sdl_controllers"
+  fi
+
+  # Set paths each setup/reset while preserving other user PICO-8 settings.
+  sed -i \
+    -e "s|^root_path .*|root_path $bios_path/pico-8/carts/|" \
+    -e "s|^cdata_path .*|cdata_path $bios_path/pico-8/cdata/|" \
+    "$pico8_config"
 fi
