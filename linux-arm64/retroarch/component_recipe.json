@@ -42,7 +42,8 @@
         {"type": "file", "source": "$EXTRACTED_PATH/genesis_plus_gx_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
         {"type": "file", "source": "$EXTRACTED_PATH/gearcoleco_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
         {"type": "file", "source": "$EXTRACTED_PATH/mesen_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
-        {"type": "file", "source": "$EXTRACTED_PATH/dosbox_pure_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+        {"type": "file", "source": "$EXTRACTED_PATH/dosbox_pure_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"},
+        {"type": "file", "source": "$EXTRACTED_PATH/mgba_libretro.info", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
       ]
     },
     {
@@ -108,6 +109,15 @@
       "extraction_type": "archive",
       "assets": [
         {"type": "file", "source": "dosbox_pure_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
+      ]
+    },
+    {
+      "source_url": "https://buildbot.libretro.com/nightly/linux/aarch64/latest/mgba_libretro.so.zip",
+      "source_type": "http",
+      "version": "nightly",
+      "extraction_type": "archive",
+      "assets": [
+        {"type": "file", "source": "mgba_libretro.so", "dest": "$COMPONENT_ARTIFACT_ROOT/rd_extras/cores"}
       ]
     },
     {
