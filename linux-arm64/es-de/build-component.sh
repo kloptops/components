@@ -76,6 +76,28 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
+# Make the bundled standalone PPSSPP the default PSP emulator. Keep the
+# RetroArch PPSSPP core available as an explicit alternative.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PY'
+from pathlib import Path
+import sys
+
+systems_path = Path(sys.argv[1])
+systems = systems_path.read_text()
+system_name = '<name>psp</name>'
+name_pos = systems.index(system_name)
+start = systems.rfind('<system>', 0, name_pos)
+end = systems.index('</system>', name_pos) + len('</system>')
+block = systems[start:end]
+core_command = '<command label="PPSSPP">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so %ROM%</command>'
+standalone_command = '<command label="PPSSPP (Standalone)">%EMULATOR_PPSSPP% %ROM%</command>'
+if core_command not in block or standalone_command not in block:
+    raise SystemExit('Expected PSP RetroArch and standalone commands were not found')
+block = block.replace(core_command, '<command label="PPSSPP">%EMULATOR_PPSSPP% %ROM%</command>')
+block = block.replace(standalone_command, '<command label="PPSSPP (RetroArch Core)">%EMULATOR_RETROARCH% -L %CORE_RETROARCH%/ppsspp_libretro.so %ROM%</command>')
+systems_path.write_text(systems[:start] + block + systems[end:])
+PY
+
 # Let ES-DE resolve the bundled standalone PPSSPP launcher.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PY'
 from pathlib import Path
