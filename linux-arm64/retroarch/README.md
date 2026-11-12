@@ -12,8 +12,8 @@ changes: use the OpenGL video driver because the device has no Vulkan driver,
 and point core downloads at Libretro's Linux AArch64 nightly directory.
 `component_prepare.sh` keeps the prototype to the selected cores and avoids
 the existing x86-oriented preparation steps for unrelated emulators.
-The selected cores are Gambatte, Snes9x, Genesis Plus GX, Mesen for NES, and
-GearColeco for ColecoVision.
+The selected cores are Gambatte, Snes9x, Genesis Plus GX, Mesen for NES,
+GearColeco for ColecoVision, and DOSBox Pure for DOS.
 Mesen is also the default NES command in the ARM ES-DE system definition,
 matching the x86 ES-DE configuration.
 An NES game launched successfully through Mesen in the integrated ARM app.
