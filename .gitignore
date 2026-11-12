@@ -1,5 +1,6 @@
 downloaded-artifacts
 */artifacts
+linux-arm64/*/artifacts/
 archive_*/*/artifacts
 .tmpfunc
 *.log
