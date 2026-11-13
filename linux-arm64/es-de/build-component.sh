@@ -76,6 +76,24 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
+# ES-DE's ARM ScummVM entry passes the game ID as a single argument. Quote
+# BASENAME because IDs may contain spaces (for example, "The Legend of
+# Kyrandia").
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PY'
+from pathlib import Path
+import sys
+
+systems_path = Path(sys.argv[1])
+systems = systems_path.read_text()
+old = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% %BASENAME%</command>'
+new = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% "%BASENAME%"</command>'
+if old not in systems:
+    if new not in systems:
+        raise SystemExit('ScummVM standalone command was not found in ES-DE systems')
+else:
+    systems_path.write_text(systems.replace(old, new, 1))
+PY
+
 # Let ES-DE resolve the bundled standalone ScummVM launcher. Keep its default
 # RetroArch ScummVM core and standalone option unchanged from the upstream ARM
 # system definition.
