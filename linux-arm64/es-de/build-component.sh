@@ -205,6 +205,10 @@ for emulator, component in (
 rules_path.write_text(rules)
 PY
 
+python3 "$script_dir/add-portmaster-system.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml"
+
 # Use the bundled GearColeco core as the ARM ColecoVision default.
 python3 "$script_dir/set-default-core.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
