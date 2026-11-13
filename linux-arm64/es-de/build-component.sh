@@ -76,9 +76,9 @@ if launcher not in block:
     rules_path.write_text(rules)
 PY
 
-# ES-DE's ARM ScummVM entry passes the game ID as a single argument. Quote
-# BASENAME because IDs may contain spaces (for example, "The Legend of
-# Kyrandia").
+# The ScummVM ROM entry is a game directory (often containing a .scummvm
+# descriptor). Detect from that directory instead of treating its display
+# name as a configured ScummVM target ID.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PY'
 from pathlib import Path
 import sys
@@ -86,7 +86,7 @@ import sys
 systems_path = Path(sys.argv[1])
 systems = systems_path.read_text()
 old = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% %BASENAME%</command>'
-new = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% "%BASENAME%"</command>'
+new = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% --path="%GAMEDIR%" --auto-detect</command>'
 if old not in systems:
     if new not in systems:
         raise SystemExit('ScummVM standalone command was not found in ES-DE systems')
