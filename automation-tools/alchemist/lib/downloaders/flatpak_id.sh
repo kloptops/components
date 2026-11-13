@@ -52,6 +52,19 @@ download() {
     log error "Could not locate the installed Flatpak ref for $flatpak_id"
     return 1
   }
+
+  if [[ "$resolved_flatpak_version" != "latest" ]]; then
+    local installed_commit
+    installed_commit="$(flatpak info --"$flatpak_install_mode" --show-commit "$flatpak_id" 2>/dev/null)" || {
+      log error "Could not determine the installed commit for $flatpak_id"
+      return 1
+    }
+    if [[ "$installed_commit" != "$resolved_flatpak_version" ]]; then
+      log error "Requested commit $resolved_flatpak_version for $flatpak_id, but commit $installed_commit is installed"
+      return 1
+    fi
+  fi
+
   final_dest="$install_location/files"
   log info "Installed files: $final_dest"
 

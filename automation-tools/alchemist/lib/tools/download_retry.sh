@@ -14,9 +14,9 @@ try() {
   while [ "$attempt" -le "$max_retries" ]; do
     if "$@"; then
       return 0
+    else
+      local exit_code=$?
     fi
-
-    local exit_code=$?
 
     if [ "$attempt" -eq "$max_retries" ]; then
       log error "ERROR: Command failed after $max_retries attempts" >&2

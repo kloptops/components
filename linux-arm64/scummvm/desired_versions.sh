@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Flathub's native AArch64 ScummVM build, using the Freedesktop 25.08 runtime.
-# The runtime generation matches the x86 component and is compatible with the
-# KDE 6.11 runtime used by the ARM RetroDECK prototype.
+# Candidate historical AArch64 Flathub build for GLIBC compatibility testing.
+# Its app ref uses Freedesktop 25.08; verify the executable's symbol versions
+# against RetroDECK's KDE 6.11 runtime before treating this pin as compatible.
 source "$REPO_ROOT/automation-tools/alchemist/desired_versions.sh"
-export SCUMMVM_DESIRED_VERSION="f1fcccc1433fc8ea77d8adff40946d3083055d5eec5facb50a8f262d7a362dcc"
+export SCUMMVM_DESIRED_VERSION="a742f597c46657508a03bd65f26349b427a14a3dbe9adfcc7ed9eb5a5dde2bad"
