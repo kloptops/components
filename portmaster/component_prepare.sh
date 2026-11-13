@@ -17,6 +17,20 @@ if [[ "$action" == "reset" ]]; then # Run reset-only commands
   mkdir -p "$portmaster_install_dir"
   unzip -oq "/app/retrodeck/components/portmaster/PortMaster.zip" -d "$portmaster_data_home"
 
+  # Weston-based AArch64 ports need the libjpeg v8 ABI. Keep it in PortMaster's
+  # architecture-specific library path, which control.txt adds to LD_LIBRARY_PATH.
+  if [[ "$(uname -m)" == "aarch64" ]]; then
+    bundled_libjpeg="/app/retrodeck/components/portmaster/retrodeck/libs.aarch64/libjpeg.so.8"
+    if [[ -f "$bundled_libjpeg" ]]; then
+      install -Dm755 "$bundled_libjpeg" "$portmaster_install_dir/retrodeck/libs.aarch64/libjpeg.so.8"
+      install -Dm644 \
+        "/app/retrodeck/components/portmaster/licenses/libjpeg-turbo/LICENSE.md" \
+        "$portmaster_install_dir/licenses/LICENSE-libjpeg-turbo.md"
+    else
+      log e "Bundled AArch64 libjpeg.so.8 is missing: $bundled_libjpeg"
+    fi
+  fi
+
   # RetroDECK runs in a Flatpak, where /var/data is not the PortMaster data
   # location. PortMaster's RetroDECK hook is copied to control.txt at launch.
   for control_file in \
