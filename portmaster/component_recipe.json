@@ -55,16 +55,6 @@
           "type": "file",
           "source": "$REPO_ROOT/$COMPONENT_NAME/component_functions.sh",
           "dest": "$COMPONENT_ARTIFACT_ROOT"
-        },
-        {
-          "type": "file",
-          "source": "$REPO_ROOT/linux-arm64/portmaster/artifacts/libjpeg-aarch64/libjpeg.so.8",
-          "dest": "$COMPONENT_ARTIFACT_ROOT/retrodeck/libs.aarch64"
-        },
-        {
-          "type": "file",
-          "source": "$REPO_ROOT/linux-arm64/portmaster/artifacts/libjpeg-aarch64/LICENSE.md",
-          "dest": "$COMPONENT_ARTIFACT_ROOT/licenses/libjpeg-turbo"
         }
       ]
       ,

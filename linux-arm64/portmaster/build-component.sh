@@ -21,8 +21,6 @@ fi
 
 export COMPONENT_ARTIFACTS_DIR="$script_dir/artifacts"
 
-bash "$script_dir/build-libjpeg-aarch64.sh"
-
 if [[ -n "${PORTMASTER_ARCHIVE_PATH:-}" ]]; then
   if [[ ! -s "$PORTMASTER_ARCHIVE_PATH" ]]; then
     printf 'PortMaster archive not found or empty: %s\n' "$PORTMASTER_ARCHIVE_PATH" >&2

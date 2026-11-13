@@ -278,13 +278,6 @@ jobs:
         if: steps.reuse-check.outputs.reuse != 'true'
         run: curl "https://raw.githubusercontent.com/RetroDECK/components-template/main/automation_tools/install_dependencies.sh" | bash
 
-      - name: Build AArch64 libjpeg v8 ABI for PortMaster
-        if: steps.reuse-check.outputs.reuse != 'true' && matrix.recipe.component == 'portmaster'
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake gcc-aarch64-linux-gnu
-          bash linux-arm64/portmaster/build-libjpeg-aarch64.sh
-
       # Run Build
       - name: 'Alchemist: Run Build Artifacts'
         if: steps.reuse-check.outputs.reuse != 'true'
