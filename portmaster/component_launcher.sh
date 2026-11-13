@@ -17,5 +17,6 @@ if [[ "$1" =~ "$roms_path/portmaster" ]]; then
   exec "$1"
 else
   log i "Opening PortMaster..."
-  exec "/var/data/PortMaster/PortMaster.sh" "$@"
+  portmaster_data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+  exec "$portmaster_data_home/PortMaster/PortMaster.sh" "$@"
 fi
