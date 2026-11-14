@@ -5,10 +5,13 @@ archives for the RetroDECK ARM prototype. Keep these artifacts separate from
 x86_64 because the existing component downloader does not select payloads by
 architecture.
 
-Current ARM components are `framework`, `es-de`, `pico-8`, `ppsspp`, and
-`retroarch`. Their generated archives live in each component's `artifacts/`
-directory and are Git-ignored. PPSSPP is assembled from the native-architecture
-Flathub app; build its archive on the AArch64 host with
+The ARM manifest currently packages 13 components: `framework`, `es-de`,
+`retroarch`, `pico-8`, `ppsspp`, `ruffle`, `scummvm`, `azahar`, `dolphin`,
+`melonds`, `mame`, `xemu`, and `portmaster`. Their generated archives live in
+each component's `artifacts/` directory and are Git-ignored. See
+`RetroDECK-arm-prototype/ARM_CHROMEBOOK_ARCH_BUILD.md` for the Chromebook test
+status and components not yet ported. PPSSPP is assembled from the
+native-architecture Flathub app; build its archive on the AArch64 host with
 `ppsspp/build-component.sh`.
 
 The ARM RetroArch recipe bundles the 194 cores in RetroDECK's x86 core inventory
