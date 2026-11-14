@@ -129,6 +129,7 @@ for emulator, component in (
     ('MELONDS', 'melonds'),
     ('MAME', 'mame'),
     ('XEMU', 'xemu'),
+    ('CEMU', 'cemu'),
     ('DUCKSTATION', 'duckstation'),
     ('RPCS3', 'rpcs3'),
     ('VITA3K', 'vita3k'),
