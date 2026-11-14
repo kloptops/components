@@ -28,14 +28,59 @@ _prepare_component::portmaster() {
       log i "Performing Portmaster $action actions"
       log i "----------------------"
 
-      rm -rf "$XDG_DATA_HOME/PortMaster"
-      unzip "/app/retrodeck/components/portmaster/PortMaster.zip" -d "$XDG_DATA_HOME/"
-      cp -f "$XDG_DATA_HOME/PortMaster/retrodeck/PortMaster.txt" "$XDG_DATA_HOME/PortMaster/PortMaster.sh"
-      chmod +x "$XDG_DATA_HOME/PortMaster/PortMaster.sh"
+      local portmaster_data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+      local portmaster_install_dir="$portmaster_data_home/PortMaster"
+      local portmaster_config="$portmaster_install_dir/config/config.json"
+      local config_backup=""
+
+      # Keep the user's PortMaster settings and installed ports while updating
+      # the bundled application files.
+      if [[ -f "$portmaster_config" ]]; then
+        config_backup="$(mktemp)"
+        cp -f "$portmaster_config" "$config_backup"
+      fi
+      create_dir "$portmaster_install_dir"
+      if ! unzip -oq "/app/retrodeck/components/portmaster/PortMaster.zip" -d "$portmaster_data_home"; then
+        log e "Could not extract the bundled PortMaster release"
+        [[ -z "$config_backup" ]] || rm -f "$config_backup"
+        return 1
+      fi
+
+      if [[ -n "$config_backup" ]]; then
+        create_dir "$(dirname "$portmaster_config")"
+        cp -f "$config_backup" "$portmaster_config"
+        rm -f "$config_backup"
+      elif [[ ! -f "$portmaster_config" ]]; then
+        create_dir "$(dirname "$portmaster_config")"
+        cp -f "$component_config/config.json" "$portmaster_config"
+      fi
+
+      # PortMaster's upstream hook assumes /var/data, which is unavailable in
+      # the RetroDECK Flatpak. Retarget it to the writable XDG data directory.
+      for control_file in \
+        "$portmaster_install_dir/control.txt" \
+        "$portmaster_install_dir/retrodeck/control.txt"; do
+        if [[ -f "$control_file" ]]; then
+          sed -i \
+            's|export controlfolder="/var/data/PortMaster"|export controlfolder="${XDG_DATA_HOME:-$HOME/.local/share}/PortMaster"|g' \
+            "$control_file"
+          sed -i \
+            's|^export LD_LIBRARY_PATH=.*|export LD_LIBRARY_PATH="/usr/lib:/lib:/app/retrodeck/components/shared-libs/org.kde.Sdk/6.11/:/app/retrodeck/components/shared-libs/org.kde.Platform/6.11/:/app/retrodeck/components/shared-libs/org.freedesktop.Platform/25.08/:$LD_LIBRARY_PATH"|' \
+            "$control_file"
+        fi
+      done
+
+      if [[ -f "$portmaster_install_dir/retrodeck/PortMaster.txt" ]]; then
+        sed -i \
+          's|cp retrodeck/control.txt \$controlfolder|cp "$controlfolder/retrodeck/control.txt" "$controlfolder/control.txt"|' \
+          "$portmaster_install_dir/retrodeck/PortMaster.txt"
+      fi
+
+      cp -f "$portmaster_install_dir/retrodeck/PortMaster.txt" "$portmaster_install_dir/PortMaster.sh"
+      chmod +x "$portmaster_install_dir/PortMaster.sh"
       rm -f "$roms_path/portmaster/PortMaster.sh"
-      install -Dm755 "$XDG_DATA_HOME/PortMaster/PortMaster.sh" "$roms_path/portmaster/PortMaster.sh"
-      create_dir "$XDG_DATA_HOME/PortMaster/config/"
-      cp "$component_config/config.json" "$XDG_DATA_HOME/PortMaster/config/config.json"
+      install -Dm755 "$portmaster_install_dir/PortMaster.sh" "$roms_path/portmaster/PortMaster.sh"
+      install -Dm755 "/app/retrodeck/components/portmaster/harbourmaster" "$portmaster_install_dir/harbourmaster"
       create_dir "$portmaster_path"
     ;;
 
@@ -80,9 +125,10 @@ _post_update_legacy::portmaster() {
 
 portmaster_show() {
   log d "Setting PortMaster visibility in ES-DE"
+  local portmaster_data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
   if [ "$1" = "true" ]; then
     log d "\"$roms_path/portmaster/PortMaster.sh\" is not found, installing it"
-    install -Dm755 "$XDG_DATA_HOME/PortMaster/PortMaster.sh" "$roms_path/portmaster/PortMaster.sh" && log d "PortMaster is correctly showing in ES-DE"
+    install -Dm755 "$portmaster_data_home/PortMaster/PortMaster.sh" "$roms_path/portmaster/PortMaster.sh" && log d "PortMaster is correctly showing in ES-DE"
     set_component_option "portmaster" "portmaster_show" "true"
   elif [ "$1" = "false" ]; then
     rm -rf "$roms_path/portmaster/PortMaster.sh" && log d "PortMaster is correctly hidden in ES-DE"

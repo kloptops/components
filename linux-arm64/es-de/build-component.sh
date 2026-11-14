@@ -77,6 +77,10 @@ python3 "$script_dir/set-default-core.py" \
 python3 "$script_dir/set-ppsspp-default.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml"
 
+python3 "$script_dir/add-portmaster-system.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml"
+
 # Launch ScummVM games from their selected game directory, including folders
 # whose paths contain spaces, and resolve the bundled standalone launcher.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PYTHON'

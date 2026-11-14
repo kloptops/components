@@ -2,7 +2,7 @@
 
 source /app/libexec/launcher_functions.sh
 
-export LD_LIBRARY_PATH="$component_path/lib:$rd_shared_libs:$rd_shared_libs/org.gnome.Platform/49/:${LD_LIBRARY_PATH}"
+export LD_LIBRARY_PATH="$component_path/lib:$rd_shared_libs:$rd_shared_libs/org.gnome.Platform/49/:$ffmpeg_path/25.08:${DEFAULT_LD_LIBRARY_PATH}"
 export QT_PLUGIN_PATH="${QT_PLUGIN_PATH}"
 export QT_QPA_PLATFORM_PLUGIN_PATH="${QT_QPA_PLATFORM_PLUGIN_PATH}"
 
@@ -19,5 +19,6 @@ if [[ "$1" =~ "$roms_path/portmaster" ]]; then
   exec "$1"
 else
   log i "Opening PortMaster..."
-  exec "/var/data/PortMaster/PortMaster.sh" "$@"
+  portmaster_data_home="${XDG_DATA_HOME:-$HOME/.local/share}"
+  exec "$portmaster_data_home/PortMaster/PortMaster.sh" "$@"
 fi

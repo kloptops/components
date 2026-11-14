@@ -1,2 +1,2 @@
 #!/bin/bash
-/var/data/PortMaster/harbourmaster "$@"
+exec "${XDG_DATA_HOME:-$HOME/.local/share}/PortMaster/harbourmaster" "$@"

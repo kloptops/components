@@ -56,19 +56,19 @@
         {
           "library": "libSDL2.so",
           "runtime_name": "org.kde.Sdk",
-          "runtime_version": "6.7",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libSDL2_image-2.0.so",
           "runtime_name": "org.kde.Sdk",
-          "runtime_version": "6.7",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libSDL2_ttf-2.0.so.0",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.7",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
