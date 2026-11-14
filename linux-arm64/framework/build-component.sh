@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+components_root="$(git -C "$script_dir/../.." rev-parse --show-toplevel)"
+workdir="$(mktemp -d "${TMPDIR:-/tmp}/retrodeck-framework-arm.XXXXXX")"
+artifact_dir="$script_dir/artifacts"
+trap 'rm -rf "$workdir"' EXIT
+
+for command_name in jq git envsubst; do
+  if ! command -v "$command_name" >/dev/null 2>&1; then
+    printf 'Missing required command: %s\n' "$command_name" >&2
+    exit 1
+  fi
+done
+
+cd "$components_root"
+export COMPONENT_ARTIFACTS_DIR="$artifact_dir"
+bash "$components_root/automation-tools/alchemist/alchemist.sh" \
+  --file "$components_root/framework/component_recipe.json" \
+  --output "$workdir"
