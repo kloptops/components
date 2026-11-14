@@ -55,9 +55,30 @@ download() {
     return 1
   fi
 
+  # Flatpak deploy paths include architecture, branch, and commit. Ask Flatpak
+  # for the resolved installation location rather than assuming the layout.
+  local install_location
+  install_location="$(flatpak info --"$flatpak_install_mode" --show-location "$flatpak_id" 2>/dev/null)" || {
+    log error "Could not locate the installed Flatpak ref for $flatpak_id"
+    return 1
+  }
+  final_dest="$install_location/files"
+
+  if [[ "$resolved_flatpak_version" != "latest" ]]; then
+    local installed_commit
+    installed_commit="$(flatpak info --"$flatpak_install_mode" --show-commit "$flatpak_id" 2>/dev/null)" || {
+      log error "Could not determine the installed commit for $flatpak_id"
+      return 1
+    }
+    if [[ "$installed_commit" != "$resolved_flatpak_version" ]]; then
+      log error "Requested commit $resolved_flatpak_version for $flatpak_id, but commit $installed_commit is installed"
+      return 1
+    fi
+  fi
+
   # Verify local Flatpak install exists
   if [[ ! -d "$final_dest" ]]; then
-    log error "Flatpak not installed at desired destination: $final_dest"
+    log error "Flatpak files directory does not exist: $final_dest"
     return 1
   fi
 

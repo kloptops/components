@@ -76,6 +76,42 @@ python3 "$script_dir/set-default-core.py" \
   psx SwanStation
 python3 "$script_dir/set-ppsspp-default.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml"
+
+# Launch ScummVM games from their selected game directory, including folders
+# whose paths contain spaces, and resolve the bundled standalone launcher.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" <<'PYTHON'
+from pathlib import Path
+import sys
+
+systems_path = Path(sys.argv[1])
+systems = systems_path.read_text()
+old = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% %BASENAME%</command>'
+new = '<command label="ScummVM (Standalone)">%STARTDIR%=%GAMEDIR% %EMULATOR_SCUMMVM% --path=%GAMEDIR% --auto-detect</command>'
+if old not in systems:
+    if new not in systems:
+        raise SystemExit('ScummVM standalone command was not found in ES-DE systems')
+else:
+    systems_path.write_text(systems.replace(old, new, 1))
+PYTHON
+
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PYTHON'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+start = rules.index('<emulator name="SCUMMVM">')
+end = rules.index('</emulator>', start)
+block = rules[start:end]
+static_path = '<rule type="staticpath">'
+launcher = '<entry>/app/retrodeck/components/scummvm/component_launcher.sh</entry>'
+if launcher not in block:
+    if static_path not in block:
+        raise SystemExit('ScummVM staticpath rule was not found in ES-DE rules')
+    block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+    rules_path.write_text(rules[:start] + block + rules[end:])
+PYTHON
+
 # Let ES-DE resolve the bundled standalone Ruffle launcher.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PYTHON'
 from pathlib import Path

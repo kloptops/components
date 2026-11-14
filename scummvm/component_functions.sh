@@ -7,6 +7,7 @@ _prepare_component::scummvm() {
   shift
 
   local component_config="$(get_own_component_path)/rd_config"
+  local component_path="$(get_own_component_path)"
 
   case "$action" in
 
@@ -37,6 +38,7 @@ _prepare_component::scummvm() {
         sed -i "s|^rootpath=.*|rootpath=$storage_path/ScummVM/cloud_root|" $scummvm_config
       
         sed -i "s|^browser_lastpath=.*|browser_lastpath=$roms_path/scummvm|" $scummvm_config
+        sed -i "s|^soundfont=.*|soundfont=$component_path/share/soundfonts/FluidR3_GM.sf2|" "$scummvm_config"
     
     ;;
 
@@ -56,6 +58,7 @@ _prepare_component::scummvm() {
         sed -i "s|^rootpath=.*|rootpath=$storage_path/ScummVM/cloud_root|" $scummvm_config
       
         sed -i "s|^browser_lastpath=.*|browser_lastpath=$roms_path/scummvm|" $scummvm_config
+        sed -i "s|^soundfont=.*|soundfont=$component_path/share/soundfonts/FluidR3_GM.sf2|" "$scummvm_config"
     ;;
     
   esac
