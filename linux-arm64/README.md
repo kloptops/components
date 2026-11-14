@@ -5,14 +5,18 @@ archives for the RetroDECK ARM prototype. Keep these artifacts separate from
 x86_64 because the existing component downloader does not select payloads by
 architecture.
 
-The ARM manifest is configured for 16 components: `framework`, `es-de`,
+The ARM manifest is configured for 18 components: `framework`, `es-de`,
 `retroarch`, `pico-8`, `ppsspp`, `ruffle`, `scummvm`, `azahar`, `dolphin`,
-`melonds`, `mame`, `xemu`, `duckstation`, `vita3k`, `rpcs3`, and `portmaster`.
-The DuckStation, Vita3K, and RPCS3 ARM recipes use their upstream AArch64
-AppImages and package them with ARM-specific launchers where needed. Their
-archive builders are in `duckstation/`, `vita3k/`, and `rpcs3/`. Generated
-archives live in each component's `artifacts/` directory and are Git-ignored;
-all three archives have been built, but Chromebook launch testing is pending. See
+`melonds`, `mame`, `xemu`, `duckstation`, `vita3k`, `rpcs3`, `cemu`,
+`steam-rom-manager`, and `portmaster`.
+The DuckStation, Vita3K, RPCS3, Cemu, and Steam ROM Manager ARM recipes use
+upstream AArch64 AppImages and package them with ARM-specific launchers where
+needed. Their archive builders are in the matching component directories.
+Generated archives live in each component's `artifacts/` directory and are
+Git-ignored. All five archives are built; Chromebook launch testing is pending.
+Cemu uses a moving AppImage from its upstream CI workflow. Its OpenGL 4.5 or
+Vulkan 1.2 requirement is above this Chromebook's GLES 3.1/no-Vulkan graphics
+stack. See
 `RetroDECK-arm-prototype/ARM_CHROMEBOOK_ARCH_BUILD.md` for the Chromebook test
 status and components not yet ported. PPSSPP is assembled from the
 native-architecture Flathub app; build its archive on the AArch64 host with
