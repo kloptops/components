@@ -1,0 +1,122 @@
+{
+  "pico-8": {
+    "name": "PICO-8",
+    "core_framework_compatibility": "1",
+    "component_version": "1.0.0",
+    "capabilities": [
+      "reset",
+      "open"
+    ],
+    "url_rdwiki": "https://retrodeck.readthedocs.io/en/latest/wiki_emulator_guides/pico-8/pico-8-guide/",
+    "url_webpage": "https://www.lexaloffle.com/pico-8.php",
+    "url_donation_purchase": "",
+    "description": "8-bit Fantasy Console engine for small retro-style games.",
+    "system_friendly_name": "PICO-8 Fantasy Console",
+    "component_type": "Engine",
+    "system": "pico8",
+    "backup_data": {
+      "core": [
+        {
+          "path": "$XDG_CONFIG_HOME/pico-8"
+        }
+      ]
+    },
+    "component_options": {
+      "splore_visible": "false"
+    },
+    "configurator_menus": {
+      "es_de_entries": [
+        {
+          "name": "PICO-8: Splore",
+          "description": "Enable or disable: The PICO-8 Splore entry in ES-DE.",
+          "command": {
+            "zenity": "configurator_splore_toggle_dialog"
+          }
+        }
+      ]
+    },
+    "es_de_config": {
+      "es_find_rules": {
+        "emulators": [
+          {
+            "name": "PICO-8",
+            "description": "PICO-8 Fantasy Console (game engine)",
+            "rules": [
+              {
+                "type": "staticpath",
+                "entries": [
+                  "%COMPONENT_PATH%/component_launcher.sh"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "es_systems": [
+        {
+          "name": "pico8",
+          "fullname": "PICO-8 Fantasy Console",
+          "path": "%ROMPATH%/pico8",
+          "extension": ".p8 .png",
+          "commands": [
+            {
+              "label": "PICO-8 [Default] (Standalone)",
+              "command": "%EMULATOR_PICO-8% -root_path %GAMEDIR% -run %ROM%",
+              "priority": 10
+            },
+            {
+              "label": "PICO-8 [Splore] (Standalone)",
+              "command": "%EMULATOR_PICO-8% -root_path %GAMEDIR% -splore",
+              "priority": 20
+            }
+          ],
+          "platform": "pico8",
+          "theme": "pico8"
+        }
+      ]
+    },
+    "es_de_gamelist_entries": {
+      "image_root": "%COMPONENT_PATH%/rd_extras/es_de_media",
+      "entries": {
+        "pico8_splore": {
+          "system": "pico8",
+          "create_file": "$roms_path/pico8/splore.png",
+          "gamelist_data": {
+            "path": "splore.png",
+            "name": "PICO-8 Splore",
+            "desc": "Splore is a graphical interface for exploring PICO-8 cartridges. You can use Splore to browse, search, and play cartridges published to the forum (BBS) directly over the Internet. You can also use Splore to navigate the cartridge storage area, with or without an Internet connection.",
+            "releasedate": "20150401T000000",
+            "developer": "Lexaloffle",
+            "publisher": "Lexaloffle",
+            "genre": "Various / Utilities",
+            "players": "1",
+            "altemulator": "PICO-8 Splore (Standalone)"
+          }
+        }
+      }
+    },
+    "bios": [
+      {
+        "filename": "pico8_64",
+        "system": "pico8",
+        "description": "PICO-8 executable",
+        "required": "Required",
+        "paths": "$bios_path/pico-8"
+      },
+      {
+        "filename": "pico8.dat",
+        "system": "pico8",
+        "description": "PICO-8 system data file",
+        "required": "Required",
+        "paths": "$bios_path/pico-8"
+      },
+      {
+        "filename": "pico8_dyn",
+        "system": "pico8",
+        "description": "Dynamic library for PICO-8",
+        "required": "Required",
+        "paths": "$bios_path/pico-8"
+      }
+    ]
+  }
+}

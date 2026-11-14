@@ -43,16 +43,37 @@ _prepare_component::pico-8() {
       log i "Performing PICO-8 $action actions"
       log i "------------------------"
 
-      if [[ -d "$roms_path/pico8" ]]; then
-        dir_prep "$roms_path/pico8" "$bios_path/pico-8/carts" # Symlink default game location to RD roms for cleanliness (this location is overridden anyway by the --root_path launch argument anyway)
-        dir_prep "$roms_path/pico8" "$bios_path/pico-8/bbs/carts" # Symlink spolre download location to RD roms
-      fi
-      dir_prep "$bios_path/pico-8" "$HOME/.lexaloffle/pico-8" # Store binary and config files together. The .lexaloffle directory is a hard-coded location for the PICO-8 config file, cannot be changed
-      dir_prep "$saves_path/PICO-8-SA/cdata" "$bios_path/pico-8/cdata"  # PICO-8 saves folder
+      if [[ "$(uname -m)" == "aarch64" ]]; then
+        # The ARM PICO-8 binary is user-supplied as pico8_64. Keep that
+        # licensed directory intact and manage only carts, saves and config.
+        create_dir "$bios_path/pico-8"
+        create_dir "$roms_path/pico8"
+        create_dir "$saves_path/PICO-8-SA/cdata"
+        dir_prep "$roms_path/pico8" "$bios_path/pico-8/carts"
+        dir_prep "$roms_path/pico8" "$bios_path/pico-8/bbs/carts"
+        dir_prep "$saves_path/PICO-8-SA/cdata" "$bios_path/pico-8/cdata"
 
-      create_dir "$XDG_CONFIG_HOME/pico-8/"
-      cp -fv "$component_config/config.txt" "$pico8_config"
-      cp -fv "$component_config/sdl_controllers.txt" "$pico8_config_sdl_controllers"
+        create_dir "$XDG_CONFIG_HOME/pico-8"
+        if [[ ! -f "$pico8_config" ]]; then
+          cp -f "$component_config/config.txt" "$pico8_config"
+        fi
+        if [[ ! -f "$pico8_config_sdl_controllers" ]]; then
+          cp -f "$component_config/sdl_controllers.txt" "$pico8_config_sdl_controllers"
+        fi
+        _set_setting_value::pico-8 "$pico8_config" "root_path" "$bios_path/pico-8/carts/"
+        _set_setting_value::pico-8 "$pico8_config" "cdata_path" "$bios_path/pico-8/cdata/"
+      else
+        if [[ -d "$roms_path/pico8" ]]; then
+          dir_prep "$roms_path/pico8" "$bios_path/pico-8/carts" # Symlink default game location to RD roms for cleanliness (this location is overridden anyway by the --root_path launch argument anyway)
+          dir_prep "$roms_path/pico8" "$bios_path/pico-8/bbs/carts" # Symlink spolre download location to RD roms
+        fi
+        dir_prep "$bios_path/pico-8" "$HOME/.lexaloffle/pico-8" # Store binary and config files together. The .lexaloffle directory is a hard-coded location for the PICO-8 config file, cannot be changed
+        dir_prep "$saves_path/PICO-8-SA/cdata" "$bios_path/pico-8/cdata"  # PICO-8 saves folder
+
+        create_dir "$XDG_CONFIG_HOME/pico-8/"
+        cp -fv "$component_config/config.txt" "$pico8_config"
+        cp -fv "$component_config/sdl_controllers.txt" "$pico8_config_sdl_controllers"
+      fi
     ;;
 
     startup)
