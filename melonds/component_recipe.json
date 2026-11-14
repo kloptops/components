@@ -57,49 +57,49 @@
         {
           "library": "libQt6Multimedia.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6Network.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6Gui.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6DBus.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6Core.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6Widgets.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6WaylandClient.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         },
         {
           "library": "libQt6XcbQpa.so.6",
           "runtime_name": "org.kde.Platform",
-          "runtime_version": "6.10",
+          "runtime_version": "6.11",
           "dest": "shared-libs"
         }
       ]

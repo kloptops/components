@@ -38,6 +38,14 @@ fi
 load_desired_versions() {
   local component_prefix policy_var pin_var desired_var
 
+  if [[ -n "${ALTERNATE_DESIRED_VERSIONS:-}" ]]; then
+    if [[ ! -f "$ALTERNATE_DESIRED_VERSIONS" ]]; then
+      log error "Alternate desired versions file not found: $ALTERNATE_DESIRED_VERSIONS"
+      return 1
+    fi
+    source "$ALTERNATE_DESIRED_VERSIONS"
+  fi
+
   while IFS= read -r line; do
     # Extract the component prefix from: export AZAHAR_VERSION_POLICY="latest"
     [[ "$line" =~ ^export[[:space:]]+([A-Z0-9_]+)_VERSION_POLICY= ]] || continue
@@ -47,8 +55,11 @@ load_desired_versions() {
     pin_var="${component_prefix}_PINNED_VERSION"
     desired_var="${component_prefix}_DESIRED_VERSION"
 
-    # Pin wins if set and non-empty, otherwise fall back to policy
-    if [[ -n "${!pin_var:-}" ]]; then
+    # An explicit alternate version file wins, followed by branch pins and
+    # finally the component's resolution policy.
+    if [[ -n "${!desired_var:-}" ]]; then
+      continue
+    elif [[ -n "${!pin_var:-}" ]]; then
       export "$desired_var"="${!pin_var}"
     else
       export "$desired_var"="${!policy_var}"

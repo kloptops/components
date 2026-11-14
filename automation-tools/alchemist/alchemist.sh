@@ -185,6 +185,7 @@ transmute() {
 parse_args() {
   local recipe=""
   local alt_workdir=""
+  local alt_versions=""
   DRYRUN=""
   RESOLVE_VERSION=""
 
@@ -222,6 +223,10 @@ parse_args() {
   if [[ ! -n "$recipe" ]]; then
     log error "Missing required arguments: -f <recipe file>"
     exit 1
+  fi
+
+  if [[ -n "$alt_versions" ]]; then
+    export ALTERNATE_DESIRED_VERSIONS="$alt_versions"
   fi
 
   transmute "$recipe" "$alt_workdir"

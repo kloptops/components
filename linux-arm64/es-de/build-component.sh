@@ -112,6 +112,33 @@ if launcher not in block:
     rules_path.write_text(rules[:start] + block + rules[end:])
 PYTHON
 
+# Resolve the standalone Flathub emulator launchers bundled in the ARM app.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PYTHON'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+for emulator, component in (
+    ('AZAHAR', 'azahar'),
+    ('DOLPHIN', 'dolphin'),
+    ('MELONDS', 'melonds'),
+    ('MAME', 'mame'),
+    ('XEMU', 'xemu'),
+):
+    start = rules.index(f'<emulator name="{emulator}">')
+    end = rules.index('</emulator>', start)
+    block = rules[start:end]
+    static_path = '<rule type="staticpath">'
+    launcher = f'<entry>/app/retrodeck/components/{component}/component_launcher.sh</entry>'
+    if launcher not in block:
+        if static_path not in block:
+            raise SystemExit(f'{emulator} staticpath rule was not found in ES-DE rules')
+        block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+        rules = rules[:start] + block + rules[end:]
+rules_path.write_text(rules)
+PYTHON
+
 # Let ES-DE resolve the bundled standalone Ruffle launcher.
 python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PYTHON'
 from pathlib import Path
