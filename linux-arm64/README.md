@@ -16,7 +16,8 @@ Generated archives live in each component's `artifacts/` directory and are
 Git-ignored. All five archives are built; Chromebook launch testing is pending.
 Cemu uses a moving AppImage from its upstream CI workflow. Its OpenGL 4.5 or
 Vulkan 1.2 requirement is above this Chromebook's GLES 3.1/no-Vulkan graphics
-stack. See
+stack. Vita3K is pinned to build 4103, matching the x86 component, and its
+AArch64 AppImage requires GLIBC up to 2.38. See
 `RetroDECK-arm-prototype/ARM_CHROMEBOOK_ARCH_BUILD.md` for the Chromebook test
 status and components not yet ported. PPSSPP is assembled from the
 native-architecture Flathub app; build its archive on the AArch64 host with

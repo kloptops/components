@@ -13,4 +13,4 @@ export XDG_DATA_DIRS="$appdir/share:${XDG_DATA_DIRS}"
 log i "RetroDECK is now launching $component_name"
 log d "AppImage directory is: $appdir"
 
-exec "$appdir/AppRun.sh" Vita3K "$@"
+exec "$appdir/AppRun" "$@"

@@ -8,7 +8,7 @@
       "assets": [
         {
           "type": "dir",
-          "source": "$EXTRACTED_PATH/../AppDir",
+          "source": "$EXTRACTED_PATH",
           "dest": "appdir"
         },
         {
