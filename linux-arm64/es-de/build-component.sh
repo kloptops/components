@@ -63,6 +63,12 @@ done
 cp -a "$components_root/es-de/rd_assets/rd_config" "$component_dir/rd_config"
 cp -a "$components_root/es-de/rd_assets/helper_files" "$component_dir/helper_files"
 cp -a "$components_root/es-de/rd_assets/res" "$component_dir/res"
+
+# Prefer the bundled AArch64 GearColeco core for ColecoVision.
+python3 "$script_dir/set-default-core.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
+  colecovision Gearcoleco
+
 printf '3.5.0\n' > "$component_dir/component_version"
 
 mkdir -p "$artifact_dir"
