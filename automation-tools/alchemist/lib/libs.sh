@@ -55,7 +55,7 @@ gather_lib() {
   local runtime_version="$4"
   local source="$5"
 
-  local final_source final_dest
+  local final_source final_dest flatpak_architecture
 
   local lib_basename="${name%%\.so*}.so"
 
@@ -77,13 +77,14 @@ gather_lib() {
     if [[ "$FLATPAK_DEFAULT_INSTALL_MODE" == "user" ]]; then
       local flatpak_current_root="$FLATPAK_USER_ROOT"
     elif [[ "$FLATPAK_DEFAULT_INSTALL_MODE" == "system" ]]; then
-      local flatpak_current_root="$$FLATPAK_SYSTEM_ROOT"
+      local flatpak_current_root="$FLATPAK_SYSTEM_ROOT"
     else
       log error "Default Flatpak install mode is not defined."
       return 1
     fi
 
-    local flatpak_root_to_search="$flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files" # Set base runtime path to search
+    flatpak_architecture="$(flatpak --default-arch)"
+    local flatpak_root_to_search="$flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files" # Set base runtime path to search
 
     local flatpak_found_libs=($(find "$flatpak_root_to_search" -name "$name")) # Search for libs with this exact name in the runtime
     if [[ ${#flatpak_found_libs[@]} -gt 1 ]]; then
@@ -132,14 +133,14 @@ gather_lib() {
   if [[ "$runtime_name" == "org.kde.Platform" ]]; then # Collect Qt plugins if needed
     if [[ ! -d "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins" ]]; then
       log info "Qt library version $runtime_version does not currently have plugins in $dest. Copying..."
-      if [[ -d "$flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files/lib/plugins" ]]; then
+      if [[ -d "$flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files/lib/plugins" ]]; then
         mkdir -p "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
-        cp -r "$flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files/lib/plugins/"* "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
-      elif [[ -d "$flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files/plugins" ]]; then
+        cp -r "$flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files/lib/plugins/"* "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
+      elif [[ -d "$flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files/plugins" ]]; then
         mkdir -p "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
-        cp -r "$flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files/plugins/"* "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
+        cp -r "$flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files/plugins/"* "$COMPONENT_ARTIFACT_ROOT/$dest/$runtime_name/$runtime_version/plugins"
       else
-        log error "Qt plugins for version $runtime_version could not be found at $flatpak_current_root/runtime/$runtime_name/x86_64/$runtime_version/active/files/lib/plugins"
+        log error "Qt plugins for version $runtime_version could not be found at $flatpak_current_root/runtime/$runtime_name/$flatpak_architecture/$runtime_version/active/files/lib/plugins"
         return 1
       fi
     else

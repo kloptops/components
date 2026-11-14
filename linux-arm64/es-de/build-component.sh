@@ -9,7 +9,7 @@ manifest="$retrodeck_root/net.retrodeck.esde-arm64-build.yml"
 build_dir="${ESDE_BUILD_DIR:-$retrodeck_root/.flatpak-builder/esde-arm64-component}"
 artifact_dir="$script_dir/artifacts"
 
-for command_name in flatpak-builder tar sha256sum; do
+for command_name in flatpak-builder tar sha256sum python3; do
   if ! command -v "$command_name" >/dev/null 2>&1; then
     printf 'Missing required command: %s\n' "$command_name" >&2
     exit 1
@@ -74,6 +74,27 @@ python3 "$script_dir/set-default-core.py" \
 python3 "$script_dir/set-default-core.py" \
   "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml" \
   psx SwanStation
+python3 "$script_dir/set-ppsspp-default.py" \
+  "$component_dir/share/es-de/resources/systems/linuxarm/es_systems.xml"
+
+# Let ES-DE resolve the bundled standalone PPSSPP launcher.
+python3 - "$component_dir/share/es-de/resources/systems/linuxarm/es_find_rules.xml" <<'PYTHON'
+from pathlib import Path
+import sys
+
+rules_path = Path(sys.argv[1])
+rules = rules_path.read_text()
+start = rules.index('<emulator name="PPSSPP">')
+end = rules.index('</emulator>', start)
+block = rules[start:end]
+static_path = '<rule type="staticpath">'
+launcher = '<entry>/app/retrodeck/components/ppsspp/component_launcher.sh</entry>'
+if launcher not in block:
+    if static_path not in block:
+        raise SystemExit('PPSSPP staticpath rule was not found in ES-DE rules')
+    block = block.replace(static_path, static_path + '\n            ' + launcher, 1)
+    rules_path.write_text(rules[:start] + block + rules[end:])
+PYTHON
 
 printf '3.5.0\n' > "$component_dir/component_version"
 
