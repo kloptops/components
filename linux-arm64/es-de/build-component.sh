@@ -191,6 +191,9 @@ for emulator, component in (
     ('MELONDS', 'melonds'),
     ('MAME', 'mame'),
     ('XEMU', 'xemu'),
+    ('DUCKSTATION', 'duckstation'),
+    ('RPCS3', 'rpcs3'),
+    ('VITA3K', 'vita3k'),
 ):
     start = rules.index(f'<emulator name="{emulator}">')
     end = rules.index('</emulator>', start)
