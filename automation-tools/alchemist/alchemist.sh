@@ -69,6 +69,23 @@ transmute() {
       export SOURCE_VERSION=$(echo "$download_result" | grep "^DOWNLOADED_VERSION=" | cut -d= -f2)
     fi
 
+    # Recipes may lock binary archives independently of their URL. This is
+    # useful for architecture-specific nightly assets whose URL can move.
+    source_sha256="$(jq -r '.sha256 // empty' <<< "$source_obj")"
+    if [[ -n "$source_sha256" ]]; then
+      if [[ ! "$source_sha256" =~ ^[[:xdigit:]]{64}$ ]]; then
+        log error "Invalid SHA-256 pin for source $source_url"
+        return 1
+      fi
+
+      actual_sha256="$(sha256sum "$DOWNLOADED_FILE" | awk '{print $1}')"
+      if [[ "${actual_sha256,,}" != "${source_sha256,,}" ]]; then
+        log error "SHA-256 mismatch for $source_url: expected $source_sha256, got $actual_sha256"
+        return 1
+      fi
+      log info "SHA-256 verified for $source_url"
+    fi
+
     # Extraction stage for this object
     extraction_result=$(process_extract -f "$DOWNLOADED_FILE" -d "$source_dest" -t "$extraction_type")
     export EXTRACTED_PATH=$(echo "$extraction_result" | grep "^EXTRACTED_PATH=" | cut -d= -f2)
@@ -113,7 +130,9 @@ transmute() {
 
   # Artifact compression stage
   if [[ ! "$DRYRUN" == "true" ]]; then
-    local final_artifact_dir="$REPO_ROOT/$COMPONENT_NAME/artifacts"
+    # Architecture-specific recipes can keep their artifacts out of the
+    # default x86_64 component directory by setting this override.
+    local final_artifact_dir="${COMPONENT_ARTIFACTS_DIR:-$REPO_ROOT/$COMPONENT_NAME/artifacts}"
 
     if [[ ! -d "$final_artifact_dir" ]]; then
       mkdir -p "$final_artifact_dir"
