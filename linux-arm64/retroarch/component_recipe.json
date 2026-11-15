@@ -800,11 +800,6 @@
         },
         {
           "type": "file",
-          "source": "$EXTRACTED_PATH/pokketstation_libretro.info",
-          "dest": "rd_extras/cores"
-        },
-        {
-          "type": "file",
           "source": "$EXTRACTED_PATH/potator_libretro.info",
           "dest": "rd_extras/cores"
         },
