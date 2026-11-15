@@ -69,5 +69,6 @@ download() {
 
   log info "Local source $final_dest validated, proceeding to extraction"
   echo "DOWNLOADED_FILE=$final_dest"
+  echo "DOWNLOADED_VERSION=$SOURCE_VERSION"
   return 0
 }
