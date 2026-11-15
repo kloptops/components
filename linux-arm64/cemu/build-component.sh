@@ -8,6 +8,7 @@ for command_name in jq git envsubst tar unzip; do
 done
 [[ -d "$retrodeck_root" ]] || { printf 'RetroDECK ARM 0.11 worktree not found: %s\n' "$retrodeck_root" >&2; exit 1; }
 export COMPONENT_ARTIFACTS_DIR="$script_dir/artifacts"
+cd "$components_root"
 exec bash "$components_root/automation-tools/alchemist/alchemist.sh" \
   --file "$script_dir/component_recipe.json" \
   --versions "$script_dir/desired_versions.sh" \
